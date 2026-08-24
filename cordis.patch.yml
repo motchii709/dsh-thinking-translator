@@ -1,0 +1,24 @@
+# Inserted as a host row; wraps every streaming model call via `llm/stream`.
+# Config fields (all optional; defaults shown):
+#   targetLang: ja          # BCP-47-ish target language for translation
+#   engine: auto            # 'auto' | 'google' | 'groq'
+#                           #   auto = Groq when GROQ_API_KEY resolves, else Google (keyless)
+#   apiKeyEnv: GROQ_API_KEY # environment/credential reference for the Groq engine
+#   groqModel: openai/gpt-oss-20b
+#   mode: append            # 'append' = show original thinking live, then append the translation
+#                           # 'replace' = buffer silently, emit only the translation
+#   translationHeader: 【翻訳】
+#   minLength: 40           # skip reasoning shorter than this many characters
+#   timeoutMs: 20000        # per-translation timeout; on failure the original passes through
+- insert:
+    - id: thinking-translator
+      name: dsh-thinking-translator
+      config:
+        targetLang: ja
+        engine: auto
+        apiKeyEnv: GROQ_API_KEY
+        groqModel: openai/gpt-oss-20b
+        mode: append
+        translationHeader: 【翻訳】
+        minLength: 40
+        timeoutMs: 20000

@@ -1,0 +1,33 @@
+{
+  "name": "dsh-thinking-translator",
+  "version": "0.1.0",
+  "description": "Translates model reasoning (thinking) content in DeepSeek Harness into a target language at the llm/stream seam — keyless free translation by default, optional Groq LLM translation when an API key is present.",
+  "keywords": [
+    "cordis",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "translation",
+    "reasoning",
+    "japanese"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "files": [
+    "lib/index.js",
+    "cordis.patch.yml"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
