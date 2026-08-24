@@ -36,7 +36,7 @@ dsh web
     engine: auto              # auto | google | groq
     apiKeyEnv: GROQ_API_KEY   # Groq利用時の鍵参照(.credentials.yaml refs / 環境変数)
     groqModel: openai/gpt-oss-20b
-    mode: append              # append | replace
+    mode: replace             # replace = 翻訳のみ表示(既定) / append = 原文ライブ+末尾に翻訳
     translationHeader: 【翻訳】
     minLength: 40             # この文字数未満の思考はスキップ
     timeoutMs: 20000

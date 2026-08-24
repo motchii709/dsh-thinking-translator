@@ -18,7 +18,7 @@
         engine: auto
         apiKeyEnv: GROQ_API_KEY
         groqModel: openai/gpt-oss-20b
-        mode: append
+        mode: replace
         translationHeader: 【翻訳】
         minLength: 40
         timeoutMs: 20000
